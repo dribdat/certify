@@ -98,14 +98,15 @@ export default {
       this.downloadUrl = [this.src, this.downloadUrl].join("/");
       // check if the link resolves
       this.isErrored = false;
+      let confetti = this.$confetti;
       axios
         .get(this.downloadUrl)
         .then(() => {
           // replace form with confirmation
           this.isDownloading = true;
-          this.$confetti.start();
+          confetti.start();
           setTimeout(function() {
-            this.$confetti.stop();
+            confetti.stop();
           }, 2000)
         })
         .catch(() => {
