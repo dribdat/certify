@@ -53,16 +53,17 @@
       <b-notification type="is-warning" :closable="false">
         There was an error. Please try correcting the spelling of your first or
         last name, which should match your answers in the registration form.
-        Contact the organizing team via Slack or
-        <a href="mailto:info@opendata.ch?subject=Certificate">E-mail</a>
+        Contact the organizing team via the
+        <a :href="chan" target="_blank">support channel</a> or by
+        <a :href="mailTo">E-mail</a>,
         if you continue having an issue.
       </b-notification>
     </section>
     <section class="info" v-show="!isErrored">
       <b-notification type="is-info" :closable="false">
-        If you have any questions, please contact the organizing team via Slack
-        or
-        <a href="mailto:info@opendata.ch?subject=Certificate">E-mail</a>.
+        If you have any questions, please contact the organizing team via the
+        <a :href="chan" target="_blank">support channel</a> or by
+        <a :href="mailTo">E-mail</a>.
       </b-notification>
     </section>
   </div>
@@ -74,7 +75,9 @@ import axios from "axios";
 export default {
   name: "HelloWorld",
   props: {
-    baseUrl: String,
+    src: String,
+    chan: String,
+    email: String
   },
   data() {
     return {
@@ -85,13 +88,14 @@ export default {
       downloadUrl: null,
       previewUrl: null,
       isErrored: false,
+      mailTo: null,
     };
   },
   methods: {
     getCertified: function () {
       // build download link
       this.downloadUrl = [this.first_name, this.last_name, ".pdf"].join("");
-      this.downloadUrl = [this.baseUrl, this.downloadUrl].join("/");
+      this.downloadUrl = [this.src, this.downloadUrl].join("/");
       // check if the link resolves
       this.isErrored = false;
       axios
@@ -99,6 +103,10 @@ export default {
         .then((res) => {
           // replace form with confirmation
           this.isDownloading = true;
+          this.$confetti.start();
+          setTimeout(function() {
+            this.$confetti.stop();
+          }, 2000)
         })
         .catch((err) => {
           // show error message
@@ -107,7 +115,8 @@ export default {
     },
   },
   mounted() {
-    this.previewUrl = this.baseUrl + "/preview.png";
+    this.previewUrl = this.src + "/preview.png";
+    this.mailTo = "mailto:" + this.email + "?subject=Certificate";
   },
 };
 </script>

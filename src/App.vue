@@ -3,34 +3,19 @@
     <div class="container">
       <div class="card">
         <div class="card-image mt-5">
-          <img
-            alt="Logo"
-            src="https://make.opendata.ch/files/2013/01/Make.OpenData.ch-Logo1.png"
-          />
+          <img alt="Logo" :src="urlLogo" />
         </div>
         <div class="card-content">
           <div class="content has-text-left">
-            <GetCertified
-              baseUrl="https://bucketeer-e34189e0-4cb3-496d-a72e-2dcf17cab858.s3-eu-west-1.amazonaws.com/public/certs/oedh2020"
-            />
+            <GetCertified :src="urlCerts" :email="infoEmail" :chan="infoChan" />
           </div>
         </div>
         <footer class="card-footer">
           <p class="card-footer-item">
-            <span>
-              Follow on
-              <a href="https://twitter.com/opendatach" target="_blank"
-                >Twitter</a
-              >
-            </span>
+            <a :href="urlResults" target="_blank"> View Results </a>
           </p>
           <p class="card-footer-item">
-            <span>
-              Like on
-              <a href="https://facebook.com/opendatach" target="_blank"
-                >Facebook</a
-              >
-            </span>
+            <a :href="urlSocial" target="_blank"> Social Media </a>
           </p>
         </footer>
       </div>
@@ -45,6 +30,16 @@ export default {
   name: "App",
   components: {
     GetCertified,
+  },
+  data() {
+    return {
+      infoEmail: process.env.INFO_EMAIL, // eslint-disable-line
+      infoChan: process.env.INFO_CHANNEL, // eslint-disable-line
+      urlLogo: process.env.URL_LOGO, // eslint-disable-line
+      urlCerts: process.env.URL_CERTS, // eslint-disable-line
+      urlResults: process.env.URL_RESULTS, // eslint-disable-line
+      urlSocial: process.env.URL_SOCIAL, // eslint-disable-line
+    };
   },
 };
 </script>
