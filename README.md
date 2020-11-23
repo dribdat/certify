@@ -10,14 +10,14 @@ Created with Vue.js, Buefy, Axios and CodeSandbox
 
 To install, set the following environment variables:
 
-- `URL_CERTS` - the public folder where certificate files are kept.
+- `VUE_APP_URL_CERTS` - the public folder where certificate files are kept.
   - Currently only files formatted as `FirstnameLastname.pdf` are supported.
   - Note: a **preview.png** is expected to also be at this location.
-- `URL_LOGO` - logo of the event (PNG, JPG)
-- `URL_SOCIAL` - social media link (hashtag or account)
-- `URL_RESULTS` - location where the results of the hackathon can be viewed
-- `INFO_EMAIL` - an e-mail address for further information.
-- `INFO_CHANNEL` - the URL of a chat channel for further information.
+- `VUE_APP_URL_LOGO` - logo of the event (PNG, JPG)
+- `VUE_APP_URL_SOCIAL` - social media link (hashtag or account)
+- `VUE_APP_URL_RESULTS` - location where the results of the hackathon can be viewed
+- `VUE_APP_INFO_EMAIL` - an e-mail address for further information.
+- `VUE_APP_INFO_CHANNEL` - the URL of a chat channel for further information.
 
 ## License
 
