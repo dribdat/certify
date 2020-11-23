@@ -44,9 +44,10 @@
     </section>
 
     <section class="confirm m-5" v-show="isDownloading">
-      <p>
-        Great! Your certificate is ready:
-      </p>
+      <h2>
+        &#x1F389; Woo hoo!
+      </h2>
+      <p>Your certificate is ready:</p>
       <a :href="downloadUrl" download>
         <button class="button is-success">&blacktriangledown; Download PDF</button></a>
     </section>
@@ -54,7 +55,8 @@
     <section class="confirm" v-show="isErrored">
       <b-notification type="is-warning" :closable="false">
         There was an error. Please try correcting the spelling of your first or
-        last name, which should match your answers in the registration form.
+        last name, which must Be Capitalized to match your answers in the
+        registration form.
         Contact the organizing team via the
         <a :href="chan" target="_blank">support channel</a> or by
         <a :href="mailTo">E-mail</a>,
@@ -106,10 +108,12 @@ export default {
         .then(() => {
           // replace form with confirmation
           this.isDownloading = true;
-          confetti.start();
+          confetti.start({
+            particlesPerFrame: 0.5,
+          });
           setTimeout(function() {
             confetti.stop();
-          }, 2000)
+          }, 5000)
         })
         .catch(() => {
           // show error message
