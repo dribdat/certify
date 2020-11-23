@@ -100,7 +100,7 @@ export default {
       this.isErrored = false;
       axios
         .get(this.downloadUrl)
-        .then((res) => {
+        .then(() => {
           // replace form with confirmation
           this.isDownloading = true;
           this.$confetti.start();
@@ -108,7 +108,7 @@ export default {
             this.$confetti.stop();
           }, 2000)
         })
-        .catch((err) => {
+        .catch(() => {
           // show error message
           this.isErrored = true;
         });
