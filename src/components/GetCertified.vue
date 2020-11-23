@@ -1,43 +1,45 @@
 <template>
   <div class="getCertified">
-    <section class="preview has-text-centered">
-      <div class="box" style="display: inline-block">
-        <img :src="previewUrl" />
+    <section class="columns form" v-show="!isDownloading">
+      <div class="column">
+        <div class="preview box" style="display: inline-block">
+          <img :src="previewUrl" />
+        </div>
       </div>
-    </section>
-    <section class="form" v-show="!isDownloading">
-      <b-field label="First Name">
-        <b-input v-model="first_name"></b-input>
-      </b-field>
+      <div class="column is-three-quarters">
+        <b-field label="First Name">
+          <b-input v-model="first_name"></b-input>
+        </b-field>
 
-      <b-field label="Last Name">
-        <b-input v-model="last_name"></b-input>
-      </b-field>
+        <b-field label="Last Name">
+          <b-input v-model="last_name"></b-input>
+        </b-field>
 
-      <div class="field">
-        <b-checkbox v-model="honestyPolicy">
-          <b
-            >I took part in the hackathon and attest to my honest
-            contribution</b
+        <div class="field">
+          <b-checkbox v-model="honestyPolicy">
+            <b
+              >I took part in the hackathon and attest to my honest
+              contribution</b
+            >
+            in agreement with the
+            <a href="https://hackcodeofconduct.org/" target="_blank"
+              >Hack Code of Conduct</a
+            >
+            during the event, knowing that the organizers fully reserve the right
+            to withdraw their recognition of my participation in case of
+            misconduct.
+          </b-checkbox>
+        </div>
+
+        <div class="field has-text-centered m-5">
+          <button
+            class="button is-primary"
+            :disabled="!honestyPolicy"
+            @click="getCertified"
           >
-          in agreement with the
-          <a href="https://hackcodeofconduct.org/" target="_blank"
-            >Hack Code of Conduct</a
-          >
-          during the event, knowing that the organizers fully reserve the right
-          to withdraw their recognition of my participation in case of
-          misconduct.
-        </b-checkbox>
-      </div>
-
-      <div class="field has-text-centered m-5">
-        <button
-          class="button is-primary"
-          :disabled="!honestyPolicy"
-          @click="getCertified"
-        >
-          Get certificate
-        </button>
+            Get certificate
+          </button>
+        </div>
       </div>
     </section>
 

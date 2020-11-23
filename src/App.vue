@@ -33,12 +33,12 @@ export default {
   },
   data() {
     return {
-      infoEmail: process.env.INFO_EMAIL, // eslint-disable-line
-      infoChan: process.env.INFO_CHANNEL, // eslint-disable-line
-      urlLogo: process.env.URL_LOGO, // eslint-disable-line
-      urlCerts: process.env.URL_CERTS, // eslint-disable-line
-      urlResults: process.env.URL_RESULTS, // eslint-disable-line
-      urlSocial: process.env.URL_SOCIAL, // eslint-disable-line
+      infoEmail: process.env.VUE_APP_INFO_EMAIL, // eslint-disable-line
+      infoChan: process.env.VUE_APP_INFO_CHANNEL, // eslint-disable-line
+      urlLogo: process.env.VUE_APP_URL_LOGO, // eslint-disable-line
+      urlCerts: process.env.VUE_APP_URL_CERTS, // eslint-disable-line
+      urlResults: process.env.VUE_APP_URL_RESULTS, // eslint-disable-line
+      urlSocial: process.env.VUE_APP_URL_SOCIAL, // eslint-disable-line
     };
   },
 };
@@ -51,9 +51,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-}
-.card {
-  max-width: 600px;
+  margin-top: 20px;
 }
 </style>
