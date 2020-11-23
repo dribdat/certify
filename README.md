@@ -4,6 +4,10 @@ This is a simple form which redirects to a download link. Asks participants to a
 
 It is a dead-simple solution to distributing certificates to event participants, which could be built upon later.
 
+Created with Vue.js, Buefy, Axios and CodeSandbox
+
+## Deployment
+
 To install, set the following environment variables:
 
 - `URL_CERTS` - the public folder where certificate files are kept.
@@ -15,4 +19,6 @@ To install, set the following environment variables:
 - `INFO_EMAIL` - an e-mail address for further information.
 - `INFO_CHANNEL` - the URL of a chat channel for further information.
 
-Created with CodeSandbox
+## License
+
+MIT - see [LICENSE](LICENSE)
