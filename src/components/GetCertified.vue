@@ -55,7 +55,7 @@
     <section class="confirm" v-show="isErrored">
       <b-notification type="is-warning" :closable="false">
         There was an error. Please try correcting the spelling of your first or
-        last name, which must Be Capitalized to match your answers in the
+        last name, which must <u>Be Capitalized</u> to match your answers in the
         registration form.
         Contact the organizing team via the
         <a :href="chan" target="_blank">support channel</a> or by
@@ -98,7 +98,7 @@ export default {
   methods: {
     getCertified: function () {
       // build download link
-      this.downloadUrl = [this.first_name, this.last_name, ".pdf"].join("");
+      this.downloadUrl = [this.first_name.trim(), this.last_name.trim(), ".pdf"].join("");
       this.downloadUrl = [this.src, this.downloadUrl].join("/");
       // check if the link resolves
       this.isErrored = false;
