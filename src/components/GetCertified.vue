@@ -49,7 +49,7 @@
       </h2>
       <p>Your certificate is ready:</p>
       <a :href="downloadUrl" download>
-        <button class="button is-success">&blacktriangledown; Download PDF</button></a>
+        <button class="button is-success is-large">&blacktriangledown; Download PDF</button></a>
     </section>
 
     <section class="confirm" v-show="isErrored">
@@ -65,7 +65,7 @@
     </section>
     <section class="info" v-show="!isErrored">
       <b-notification type="is-info" :closable="false">
-        If you have any questions, please contact the organizing team via the
+        If you have any questions, please contact us via the
         <a :href="chan" target="_blank">support channel</a> or by
         <a :href="mailTo">E-mail</a>.
       </b-notification>
