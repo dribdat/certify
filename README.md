@@ -6,6 +6,9 @@ It is a dead-simple solution to distributing certificates to event participants,
 
 Created with Vue.js, Buefy, Axios and CodeSandbox
 
+![text383](https://user-images.githubusercontent.com/31819/145542974-dfe06dac-ac04-4a48-946a-55a2f6c8acc5.png)
+
+
 ## Deployment
 
 To install, set the following environment variables:
