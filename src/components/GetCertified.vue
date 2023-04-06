@@ -57,17 +57,11 @@
         There was an error. Please try correcting the spelling of your first or
         last name, which must <u>Be Capitalized</u> to match your answers in the
         registration form.
-        Contact the organizing team via the
-        <a :href="chan" target="_blank">support channel</a> or by
-        <a :href="mailTo">E-mail</a>,
-        if you continue having an issue.
-      </b-notification>
-    </section>
-    <section class="info" v-show="!isErrored">
-      <b-notification type="is-info" :closable="false">
-        If you have any questions, please contact us via the
-        <a :href="chan" target="_blank">support channel</a> or by
-        <a :href="mailTo">E-mail</a>.
+        Contact the organizing team if you continue having an issue:
+        <ul>
+          <li v-if="chan"><a :href="chan" target="_blank">support channel</a></li>
+          <li v-if="mailTo"><a :href="mailTo">send e-mail</a></li>
+        </ul>
       </b-notification>
     </section>
   </div>
@@ -123,7 +117,7 @@ export default {
   },
   mounted() {
     this.previewUrl = this.src + "/preview.png";
-    this.mailTo = "mailto:" + this.email + "?subject=Certificate";
+    this.mailTo = this.email ? "mailto:" + this.email + "?subject=Certificate" : '';
   },
 };
 </script>
