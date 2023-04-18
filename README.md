@@ -16,6 +16,7 @@ To install, set the following environment variables:
 - `VUE_APP_URL_CERTS` - the public folder where certificate files are kept.
   - Currently only files formatted as `FirstnameLastname.pdf` are supported.
   - Note: a **preview.png** is expected to also be at this location.
+  - No trailing slash.
 - `VUE_APP_URL_LOGO` - logo of the event (PNG, JPG)
 - `VUE_APP_URL_SOCIAL` - social media link (hashtag or account)
 - `VUE_APP_URL_RESULTS` - location where the results of the hackathon can be viewed
