@@ -92,28 +92,38 @@ export default {
   methods: {
     getCertified: function () {
       // build download link
-      this.downloadUrl = [this.first_name.trim(), this.last_name.trim(), ".pdf"].join("");
+      this.downloadUrl = [this.first_name.trim(), " ", this.last_name.trim(), ".pdf"].join("");
       this.downloadUrl = [this.src, this.downloadUrl].join("/");
       // check if the link resolves
       this.isErrored = false;
-      let confetti = this.$confetti;
       axios
         .get(this.downloadUrl)
-        .then(() => {
-          // replace form with confirmation
-          this.isDownloading = true;
-          confetti.start({
-            particlesPerFrame: 0.5,
-          });
-          setTimeout(function() {
-            confetti.stop();
-          }, 5000)
-        })
-        .catch(() => {
-          // show error message
-          this.isErrored = true;
+        .then(this.processDownload)
+        .catch((e) => {
+          console.warn(e);
+          // try without spaces
+          axios
+            .get(this.downloadUrl.replace(" ", ""))
+            .then(this.processDownload)
+            .catch((e) => {
+              console.warn(e);
+              // show error message
+              this.isErrored = true;
+            });
         });
     },
+    processDownload: function () {
+      let confetti = this.$confetti;
+      // replace form with confirmation
+      this.isDownloading = true;
+      this.isErrored = false;
+      confetti.start({
+        particlesPerFrame: 0.5,
+      });
+      setTimeout(function() {
+        confetti.stop();
+      }, 5000)
+    }
   },
   mounted() {
     this.previewUrl = this.src + "/preview.png";
