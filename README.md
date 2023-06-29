@@ -8,7 +8,8 @@ A more sophisticated process, connected to an actual API, is under development a
 
 Created with Vue.js, Buefy, Axios and CodeSandbox
 
-![text383](https://user-images.githubusercontent.com/31819/145542974-dfe06dac-ac04-4a48-946a-55a2f6c8acc5.png)
+<img src="https://user-images.githubusercontent.com/31819/145542974-dfe06dac-ac04-4a48-946a-55a2f6c8acc5.png" width="500">
+
 _An example certificate from an [Opendata.ch](https://opendata.ch) Hackday_
 
 ## Deployment
