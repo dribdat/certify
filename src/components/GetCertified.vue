@@ -18,12 +18,12 @@
         <div class="field">
           <b-checkbox v-model="honestyPolicy">
             <b
-              >I took part in the hackathon and attest to my honest
+              >I took part in the workshop and attest to my honest
               contribution</b
             >
             in agreement with the
             <a href="https://hackcodeofconduct.org/" target="_blank"
-              >Hack Code of Conduct</a
+              >Code of Conduct</a
             >
             during the event, knowing that the organizers fully reserve the right
             to withdraw their recognition of my participation in case of

@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/core": "^7",
     "axios": "*",
-    "buefy": "^1",
+    "buefy": "<1",
     "vue": "^2",
     "vue-confetti": "*"
   },
