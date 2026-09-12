@@ -3,7 +3,7 @@
     <div class="container">
       <div class="card">
         <div class="card-image mt-5">
-          <img alt="Logo" :src="urlLogo" />
+          <img v-if="urlLogo" alt="Logo" :src="urlLogo" />
         </div>
         <div class="card-content">
           <div class="content has-text-left">
@@ -11,10 +11,10 @@
           </div>
         </div>
         <footer class="card-footer">
-          <p class="card-footer-item">
+          <p v-if="urlResults" class="card-footer-item">
             <a :href="urlResults" target="_blank"> View Results </a>
           </p>
-          <p class="card-footer-item">
+          <p v-if="urLSocial" class="card-footer-item">
             <a :href="urlSocial" target="_blank"> Social Media </a>
           </p>
         </footer>
