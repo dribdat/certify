@@ -100,10 +100,11 @@ export default {
         .get(this.downloadUrl)
         .then(this.processDownload)
         .catch((e) => {
-          console.warn(e);
+          //console.warn(e);
+          this.downloadUrl = this.downloadUrl.replace(" ", "");
           // try without spaces
           axios
-            .get(this.downloadUrl.replace(" ", ""))
+            .get(this.downloadUrl)
             .then(this.processDownload)
             .catch((e) => {
               console.warn(e);
